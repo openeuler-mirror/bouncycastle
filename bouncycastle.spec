@@ -6,7 +6,7 @@
 
 Name:             bouncycastle
 Version:          1.61
-Release:          4
+Release:          5
 Summary:          A Java implementation of cryptographic algorithms
 License:          MIT
 URL:              http://www.bouncycastle.org
@@ -17,7 +17,8 @@ Source3:          http://repo1.maven.org/maven2/org/bouncycastle/bcpkix-jdk15on/
 Source4:          http://repo1.maven.org/maven2/org/bouncycastle/bcprov-jdk15on/%{version}/bcprov-jdk15on-%{version}.pom
 Source5:          http://repo1.maven.org/maven2/org/bouncycastle/bctls-jdk15on/%{version}/bctls-jdk15on-%{version}.pom
 Patch6000:        CVE-2019-17359.patch
-
+Patch6001:        0001-cve-pre.patch
+Patch6002:        CVE-2020-15522.patch
 BuildRequires:    ant ant-junit aqute-bnd javamail javapackages-local
 Requires(post):   javapackages-tools
 Requires(postun): javapackages-tools
@@ -147,6 +148,9 @@ fi
 %{java_sec_dir}/2000-%{class_name}
 
 %changelog
+* Sat Jul 31 2021 liwu <liwu13@huawei.com> - 1.61-5
+- fix CVE-2020-15522
+
 * Wed Feb 12 2020 Shuaishuai Song <songshuaishuai2@huawei.com> - 1.61-4
 - remove script
 
